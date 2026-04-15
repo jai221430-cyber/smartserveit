@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmartServe IT – Bangalore's trusted partner for IT equipment sales, networking, internet services, AV systems, and IT manpower consultancy." />
+  <meta name="keywords" content="IT services Bangalore, networking, internet services, AV systems, IT consultancy, computer sales, IT manpower" />
+  <title>SmartServe IT | Your Trusted IT Partner in Bangalore</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS Reset & Variables ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:    #0A1628;
+      --blue-mid:     #102A4C;
+      --blue:         #1565C0;
+      --blue-light:   #1976D2;
+      --accent:       #00BCD4;
+      --accent-2:     #FF6F00;
+      --text-dark:    #0D1117;
+      --text-mid:     #374151;
+      --text-light:   #6B7280;
+      --white:        #FFFFFF;
+      --off-white:    #F8FAFC;
+      --border:       #E5E7EB;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md:    0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg:    0 10px 40px rgba(0,0,0,.14);
+      --shadow-xl:    0 20px 60px rgba(0,0,0,.18);
+      --radius-sm:    8px;
+      --radius-md:    14px;
+      --radius-lg:    24px;
+      --radius-xl:    36px;
+      --transition:   0.3s cubic-bezier(.4,0,.2,1);
+      --font-main:    'Inter', sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Utility Classes ─── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,188,212,.12);
+      color: var(--accent);
+      border: 1px solid rgba(0,188,212,.25);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .badge-orange {
+      background: rgba(255,111,0,.10);
+      color: var(--accent-2);
+      border-color: rgba(255,111,0,.22);
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      font-size: .95rem;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(21,101,192,.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(21,101,192,.45);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent), #0097A7);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(0,188,212,.35);
+    }
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,188,212,.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.4);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.7);
+    }
+
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--off-white); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 3px; }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.75);
+      font-size: .8rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .topbar a { color: rgba(255,255,255,.75); }
+    .topbar a:hover { color: var(--accent); }
+    .topbar-links { display: flex; gap: 20px; align-items: center; }
+    .topbar-links span { display: flex; align-items: center; gap: 5px; }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .navbar.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.10); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(21,101,192,.08);
+      color: var(--blue);
+    }
+
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-dark);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─── MOBILE NAV ─── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,22,40,.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      padding: 10px 30px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+    .mobile-nav a:hover { background: rgba(255,255,255,.1); color: var(--accent); }
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(140deg, var(--blue-dark) 0%, var(--blue-mid) 50%, #0D2D6B 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,188,212,.18) 0%, transparent 70%);
+      top: -150px;
+      right: -150px;
+      pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21,101,192,.25) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {}
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,188,212,.12);
+      border: 1px solid rgba(0,188,212,.3);
+      color: var(--accent);
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(90deg, var(--accent), #80DEEA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.7);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .stat-item { border-left: 2px solid rgba(0,188,212,.4); padding-left: 14px; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 3px; }
+
+    /* Hero Visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card-stack {
+      position: relative;
+      width: 420px;
+      height: 480px;
+    }
+
+    .hero-card {
+      position: absolute;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      color: white;
+    }
+
+    .hero-card-main {
+      width: 340px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(21,101,192,.4), rgba(0,188,212,.2));
+      border-color: rgba(0,188,212,.3);
+    }
+
+    .hero-card-sm {
+      width: 200px;
+      padding: 16px;
+      font-size: .85rem;
+    }
+    .hero-card-top-right {
+      top: 20px;
+      right: 0;
+      animation: float1 4s ease-in-out infinite;
+    }
+    .hero-card-bottom-left {
+      bottom: 30px;
+      left: 0;
+      animation: float2 5s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+    @keyframes float2 {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(10px); }
+    }
+
+    .service-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.08);
+      border-radius: 100px;
+      padding: 8px 14px;
+      margin-bottom: 10px;
+      font-size: .82rem;
+      font-weight: 500;
+    }
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .pill-dot.orange { background: var(--accent-2); }
+    .pill-dot.green  { background: #4CAF50; }
+
+    .card-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: rgba(0,188,212,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .card-title { font-size: .9rem; font-weight: 600; }
+    .card-value {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .card-label { font-size: .75rem; opacity: .65; margin-top: 2px; }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-light);
+      font-size: .85rem;
+      font-weight: 500;
+    }
+    .trust-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: .95rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── SERVICES ─── */
+    .section { padding: 90px 0; }
+    .section-alt { background: var(--off-white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+      border-color: transparent;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .icon-blue  { background: rgba(21,101,192,.1);  color: var(--blue); }
+    .icon-cyan  { background: rgba(0,188,212,.1);   color: var(--accent); }
+    .icon-orange{ background: rgba(255,111,0,.1);   color: var(--accent-2); }
+    .icon-green { background: rgba(76,175,80,.1);   color: #4CAF50; }
+    .icon-purple{ background: rgba(103,58,183,.1);  color: #673AB7; }
+    .icon-red   { background: rgba(244,67,54,.1);   color: #F44336; }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    .service-card p {
+      font-size: .92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--off-white);
+      color: var(--text-light);
+      border: 1px solid var(--border);
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 16px;
+      transition: var(--transition);
+    }
+    .service-link:hover { gap: 10px; color: var(--accent); }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-main-card {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-main-card::before {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(0,188,212,.12);
+      top: -60px;
+      right: -60px;
+    }
+
+    .about-stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .about-stat {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+    }
+    .about-stat .num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .about-stat .lbl {
+      font-size: .78rem;
+      color: rgba(255,255,255,.6);
+      margin-top: 3px;
+    }
+
+    .about-floating {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px;
+    }
+    .about-floating-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .about-floating-text {}
+    .about-floating-text .val {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .about-floating-text .desc {
+      font-size: .75rem;
+      color: var(--text-light);
+    }
+
+    .about-content {}
+    .about-content .section-sub { margin-bottom: 28px; }
+
+    .value-list { margin-bottom: 32px; }
+    .value-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+    .value-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .value-item h4 {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .value-item p {
+      font-size: .87rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ─── WHY US ─── */
+    .whyus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 36px 24px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .why-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .why-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .why-card h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .why-card p {
+      font-size: .86rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ─── PROCESS ─── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(10% + 20px);
+      right: calc(10% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+    }
+    .step-bubble {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 auto 20px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(21,101,192,.3);
+      transition: var(--transition);
+    }
+    .process-step:hover .step-bubble {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(21,101,192,.4);
+    }
+    .step-num {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-2);
+      border-radius: 50%;
+      font-size: .7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .process-step h4 {
+      font-family: var(--font-display);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ─── INDUSTRIES ─── */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .industry-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .industry-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .industry-emoji { font-size: 2.2rem; margin-bottom: 12px; }
+    .industry-card h4 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .industry-card p { font-size: .82rem; color: var(--text-light); }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: var(--transition);
+    }
+    .testimonial-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .stars { color: #FFC107; margin-bottom: 14px; letter-spacing: 2px; font-size: 1rem; }
+    .testimonial-text {
+      font-size: .93rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .author-name { font-size: .9rem; font-weight: 700; color: var(--text-dark); }
+    .author-role { font-size: .78rem; color: var(--text-light); }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #0D2D6B 50%, var(--blue-mid) 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,188,212,.18) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,.72);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      position: relative;
+    }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* ─── CONTACT ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      margin-top: 50px;
+    }
+
+    .contact-info {}
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+    .contact-info p {
+      font-size: .92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text .label {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-light);
+      margin-bottom: 3px;
+    }
+    .contact-item-text .value {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .contact-item-text a { color: var(--blue); }
+    .contact-item-text a:hover { color: var(--accent); }
+
+    .contact-hours {
+      margin-top: 28px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+    }
+    .contact-hours h4 {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: .84rem;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-form h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      font-size: .92rem;
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      outline: none;
+      background: var(--white);
+      transition: var(--transition);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(21,101,192,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: rgba(76,175,80,.08);
+      border: 1px solid rgba(76,175,80,.25);
+      border-radius: var(--radius-sm);
+      color: #388E3C;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* ─── MAP STRIP ─── */
+    .map-strip {
+      background: var(--blue-dark);
+      padding: 50px 0;
+    }
+    .map-strip-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .map-placeholder {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.5);
+      gap: 10px;
+    }
+    .map-placeholder span:first-child { font-size: 2rem; }
+    .map-placeholder span:last-child { font-size: .88rem; }
+    .map-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .map-info p { color: rgba(255,255,255,.6); font-size: .92rem; line-height: 1.7; margin-bottom: 20px; }
+    .map-detail { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.65); font-size: .9rem; margin-bottom: 10px; }
+    .map-detail strong { color: white; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.7);
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding: 60px 0 40px;
+    }
+    .footer-brand .logo { color: white; margin-bottom: 16px; }
+    .footer-brand p {
+      font-size: .88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 20px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--blue); color: white; border-color: var(--blue); }
+
+    .footer-col h5 {
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: white;
+      margin-bottom: 18px;
+    }
+    .footer-col ul li {
+      margin-bottom: 9px;
+    }
+    .footer-col ul li a {
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--accent); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .footer-contact-item .icon {
+      color: var(--accent);
+      font-size: .95rem;
+      margin-top: 2px;
+    }
+    .footer-contact-item span {
+      font-size: .87rem;
+      color: rgba(255,255,255,.55);
+      line-height: 1.55;
+    }
+    .footer-contact-item a { color: rgba(255,255,255,.6); }
+    .footer-contact-item a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: .82rem;
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(255,255,255,.45); }
+    .footer-bottom-links a:hover { color: var(--accent); }
+
+    /* ─── FLOATING WHATSAPP ─── */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      z-index: 900;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .whatsapp-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .whyus-grid { grid-template-columns: repeat(2, 1fr); }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .process-grid::before { display: none; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-links .topbar-extra { display: none; }
+      .nav-links, .nav-cta .btn { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 60px 0 50px; }
+      .hero-visual { display: none; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-floating { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .whyus-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .industries-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .map-strip-inner { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .whyus-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .industries-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ─── -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-links">
+        <span>📍 Bangalore, Karnataka, India</span>
+        <span class="topbar-extra">🕐 Mon–Sat: 9AM–7PM | Emergency 24/7</span>
+      </div>
+      <div class="topbar-links">
+        <span><a href="tel:+91XXXXX7272">📞 +91 XXXXX 7272</a></span>
+        <span><a href="mailto:x@gmail.com">✉️ x@gmail.com</a></span>
+        <span><a href="https://smartserveit.com" style="color:var(--accent)">🌐 smartserveit.com</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">⚡</div>
+        Smart<span>Serve</span> IT
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">How We Work</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="tel:+91XXXXX7272" class="btn btn-primary" style="font-size:.85rem;padding:10px 20px;">📞 Call Now</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── MOBILE NAV ─── -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About Us</a>
+  <a href="#process" onclick="closeMobile()">How We Work</a>
+  <a href="#industries" onclick="closeMobile()">Industries</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <br/>
+  <a href="tel:+91XXXXX7272" class="btn btn-accent" style="margin-top:10px">📞 +91 XXXXX 7272</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🚀 Bangalore's Rising IT Partner</div>
+
+        <h1 class="hero-title">
+          Complete IT Solutions<br/>
+          <span class="highlight">Smarter. Faster.</span><br/>
+          Delivered.
+        </h1>
+
+        <p class="hero-sub">
+          From IT equipment sales and network setup to audio-visual systems and manpower consultancy —
+          SmartServe IT is your single-source technology partner for businesses across Bangalore.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-accent">Get Free Consultation ➜</a>
+          <a href="#services" class="btn btn-outline">Explore Services</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">150+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Cards -->
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <!-- Main card -->
+          <div class="hero-card hero-card-main">
+            <div class="card-icon-row">
+              <div class="card-icon">🖥️</div>
+              <div>
+                <div class="card-title">IT Infrastructure</div>
+                <div style="font-size:.75rem;opacity:.6">End-to-end setup</div>
+              </div>
+            </div>
+            <div class="service-pill"><span class="pill-dot"></span> Networking & Internet Services</div>
+            <div class="service-pill"><span class="pill-dot orange"></span> Computer Sales & Servicing</div>
+            <div class="service-pill"><span class="pill-dot green"></span> AV & Surveillance Systems</div>
+            <div class="service-pill"><span class="pill-dot"></span> IT Manpower Consultancy</div>
+          </div>
+
+          <!-- Top-right floating card -->
+          <div class="hero-card hero-card-sm hero-card-top-right">
+            <div class="card-icon" style="margin-bottom:8px;width:32px;height:32px;font-size:.85rem;">⚡</div>
+            <div class="card-value">4h</div>
+            <div class="card-label">Avg. Response Time</div>
+          </div>
+
+          <!-- Bottom-left floating card -->
+          <div class="hero-card hero-card-sm hero-card-bottom-left">
+            <div class="card-icon" style="margin-bottom:8px;width:32px;height:32px;font-size:.85rem;">✅</div>
+            <div class="card-value">98%</div>
+            <div class="card-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST STRIP ─── -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-icon">🏆</div>
+        <span>Certified IT Professionals</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <span>Secure & Reliable Installations</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <span>Fast Turnaround Time</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤝</div>
+        <span>Transparent Pricing</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📞</div>
+        <span>24/7 Emergency Support</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICES ─── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Comprehensive IT Services<br/>Under One Roof</h2>
+      <p class="section-sub">
+        From sourcing equipment to long-term support, SmartServe IT handles every aspect
+        of your technology needs — so you can focus on what matters most: your business.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 1 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-blue">🖥️</div>
+        <h3>IT Equipment Sales</h3>
+        <p>
+          We supply a wide range of IT hardware — desktops, laptops, servers, workstations,
+          printers, and peripherals — from leading brands at competitive prices. Every purchase
+          includes expert consultation to ensure the right fit for your workload and budget.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Desktops & Laptops</span>
+          <span class="tag">Servers</span>
+          <span class="tag">Printers</span>
+          <span class="tag">Peripherals</span>
+        </div>
+        <a href="#contact" class="service-link">Get a Quote ➜</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-cyan">🔧</div>
+        <h3>Installation & Configuration</h3>
+        <p>
+          Our certified technicians handle complete hardware and software installation,
+          OS setup, driver configuration, and network integration — ensuring your systems
+          are up and running quickly with zero disruption to your operations.
+        </p>
+        <div class="service-tags">
+          <span class="tag">OS Setup</span>
+          <span class="tag">Driver Config</span>
+          <span class="tag">System Integration</span>
+          <span class="tag">On-site Deployment</span>
+        </div>
+        <a href="#contact" class="service-link">Schedule Installation ➜</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-orange">🌐</div>
+        <h3>Networking & Internet Services</h3>
+        <p>
+          We design, install, and manage complete networking solutions — LAN, WAN, Wi-Fi,
+          VPN, and high-speed internet connectivity. Enjoy seamless, secure, and scalable
+          network infrastructure tailored to your business size and growth plans.
+        </p>
+        <div class="service-tags">
+          <span class="tag">LAN / WAN Setup</span>
+          <span class="tag">Wi-Fi Solutions</span>
+          <span class="tag">VPN & Firewall</span>
+          <span class="tag">ISP Liaison</span>
+        </div>
+        <a href="#contact" class="service-link">Plan Your Network ➜</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-green">🛠️</div>
+        <h3>IT Equipment Servicing & AMC</h3>
+        <p>
+          Regular maintenance prevents costly breakdowns. We offer Annual Maintenance Contracts
+          (AMC), on-demand repairs, hardware diagnostics, data recovery, and software troubleshooting
+          to keep your infrastructure running at peak performance.
+        </p>
+        <div class="service-tags">
+          <span class="tag">AMC Plans</span>
+          <span class="tag">On-site Repair</span>
+          <span class="tag">Data Recovery</span>
+          <span class="tag">Remote Support</span>
+        </div>
+        <a href="#contact" class="service-link">Get AMC Quote ➜</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-purple">🎥</div>
+        <h3>Audio-Visual (AV) Systems</h3>
+        <p>
+          Transform your boardrooms, conference halls, training centres, and retail spaces
+          with professional AV systems. We supply and install projectors, interactive displays,
+          digital signage, PA systems, video conferencing solutions, and CCTV surveillance.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Projectors & Displays</span>
+          <span class="tag">Video Conferencing</span>
+          <span class="tag">CCTV & Surveillance</span>
+          <span class="tag">PA Systems</span>
+        </div>
+        <a href="#contact" class="service-link">Design My AV Setup ➜</a>
+      </div>
+
+      <!-- 6 -->
+      <div class="service-card fade-in">
+        <div class="service-icon icon-red">👥</div>
+        <h3>IT Manpower Consultancy</h3>
+        <p>
+          Struggling to find the right IT talent? We provide end-to-end manpower solutions —
+          sourcing, vetting, and deploying skilled IT professionals including network engineers,
+          system admins, AV technicians, desktop support, and helpdesk staff on contract or permanent basis.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Contract Staffing</span>
+          <span class="tag">Permanent Hiring</span>
+          <span class="tag">Technical Screening</span>
+          <span class="tag">Payroll Support</span>
+        </div>
+        <a href="#contact" class="service-link">Find IT Talent ➜</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Visual -->
+      <div class="about-visual fade-in">
+        <div class="about-main-card">
+          <div class="badge" style="margin-bottom:20px;">🏢 Bangalore-Based Startup</div>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:white;margin-bottom:12px;">
+            Built on Local Expertise, Driven by Technology
+          </h3>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:0;">
+            SmartServe IT was founded with one clear goal: to make enterprise-grade IT
+            services accessible and affordable for every business in Bangalore — from
+            startups to established enterprises.
+          </p>
+          <div class="about-stat-row">
+            <div class="about-stat">
+              <div class="num">150+</div>
+              <div class="lbl">Clients Served</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">500+</div>
+              <div class="lbl">Projects Done</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">5★</div>
+              <div class="lbl">Avg. Rating</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">24/7</div>
+              <div class="lbl">Support</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-floating">
+          <div class="about-floating-icon">⚡</div>
+          <div class="about-floating-text">
+            <div class="val">4 Hours</div>
+            <div class="desc">Avg. on-site response time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content fade-in">
+        <div class="section-label">About SmartServe IT</div>
+        <h2 class="section-title">Your Trusted Tech Partner Since Day One</h2>
+        <p class="section-sub" style="margin-bottom:28px;">
+          We are a Bangalore-based IT startup committed to delivering high-quality,
+          end-to-end technology solutions to businesses of all sizes. Our team of
+          certified professionals brings hands-on experience across hardware, networking,
+          AV systems, and human resource deployment.
+        </p>
+
+        <div class="value-list">
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div>
+              <h4>Client-First Philosophy</h4>
+              <p>Every solution we design is tailored to your specific needs, budget,
+              and growth trajectory. We listen before we act.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div>
+              <h4>Certified & Experienced Team</h4>
+              <p>Our engineers hold industry certifications across networking, AV systems,
+              and IT infrastructure, backed by years of hands-on deployment experience.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div>
+              <h4>Transparent, No-Surprise Pricing</h4>
+              <p>We believe in clear quotes, no hidden costs, and honest timelines.
+              What we quote is what you pay.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-check">✓</div>
+            <div>
+              <h4>End-to-End Accountability</h4>
+              <p>From initial consultation to post-installation support, we stay with
+              you through every phase and beyond.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">Talk to Our Team ➜</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">Why SmartServe IT</div>
+      <h2 class="section-title">Reasons Businesses Trust Us</h2>
+      <p class="section-sub">
+        We're not just a vendor — we're a long-term partner invested in your
+        technology success.
+      </p>
+    </div>
+
+    <div class="whyus-grid">
+      <div class="why-card fade-in">
+        <div class="why-number">01</div>
+        <h4>One-Stop IT Partner</h4>
+        <p>Sales, installation, servicing, networking, AV, and manpower — all under one roof.
+        No more juggling multiple vendors.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">02</div>
+        <h4>Rapid Response Time</h4>
+        <p>With a dedicated Bangalore-based team, we commit to 4-hour on-site response for
+        critical issues and same-day remote support.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">03</div>
+        <h4>Scalable Solutions</h4>
+        <p>Whether you're a 5-person startup or a 500-seat enterprise, our solutions scale
+        seamlessly as your business grows.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">04</div>
+        <h4>Flexible Engagement</h4>
+        <p>Choose from one-time projects, monthly retainers, or comprehensive AMC plans —
+        flexible to your operational and budget needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">Our Process</div>
+      <h2 class="section-title">How We Deliver Excellence</h2>
+      <p class="section-sub">
+        A proven, structured approach that ensures every project is delivered on time,
+        within budget, and to the highest quality standards.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step fade-in">
+        <div class="step-bubble">
+          💬<span class="step-num">1</span>
+        </div>
+        <h4>Discovery Call</h4>
+        <p>We start with a free consultation to understand your requirements, pain points, and goals.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-bubble">
+          📋<span class="step-num">2</span>
+        </div>
+        <h4>Site Assessment</h4>
+        <p>Our engineers conduct a thorough on-site evaluation to plan the right solution.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-bubble">
+          📄<span class="step-num">3</span>
+        </div>
+        <h4>Custom Proposal</h4>
+        <p>Receive a detailed, transparent proposal with scope, timeline, and clear pricing.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-bubble">
+          🚀<span class="step-num">4</span>
+        </div>
+        <h4>Deployment</h4>
+        <p>Our team executes the project efficiently with minimal disruption to your operations.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-bubble">
+          🔄<span class="step-num">5</span>
+        </div>
+        <h4>Ongoing Support</h4>
+        <p>Post-deployment monitoring, maintenance, and 24/7 support keep you always operational.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES ─── -->
+<section class="section" id="industries">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">Industries We Serve</div>
+      <h2 class="section-title">Across Every Sector in Bangalore</h2>
+      <p class="section-sub">
+        Our versatile IT capabilities serve a diverse range of industries,
+        each with unique technology requirements.
+      </p>
+    </div>
+
+    <div class="industries-grid">
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🏢</div>
+        <h4>Corporate Offices</h4>
+        <p>End-to-end IT infrastructure for offices of all sizes</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🏥</div>
+        <h4>Healthcare</h4>
+        <p>Secure networking and equipment for clinics & hospitals</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🎓</div>
+        <h4>Education</h4>
+        <p>Smart classrooms, AV systems and campus Wi-Fi</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🏭</div>
+        <h4>Manufacturing</h4>
+        <p>Industrial networking and IT support solutions</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🏬</div>
+        <h4>Retail & Hospitality</h4>
+        <p>POS systems, surveillance, and guest Wi-Fi setup</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🚀</div>
+        <h4>Startups & SMEs</h4>
+        <p>Scalable, budget-friendly IT setups for growing teams</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🏛️</div>
+        <h4>Government & NGO</h4>
+        <p>Reliable infrastructure for public institutions</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="industry-emoji">🎬</div>
+        <h4>Media & Events</h4>
+        <p>Professional AV setups for live events and studios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">Client Reviews</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-sub">
+        Real feedback from businesses we've helped transform with smart IT solutions.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "SmartServe IT set up our entire office network from scratch — structured cabling,
+          Wi-Fi, firewall, and internet. The team was professional, fast, and the pricing
+          was very fair. Highly recommend for any Bangalore business!"
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RK</div>
+          <div>
+            <div class="author-name">Rahul Kumar</div>
+            <div class="author-role">CEO, TechWave Solutions, Koramangala</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "We needed a full AV setup for our conference room and training hall. SmartServe IT
+          delivered on time, on budget, and the quality is outstanding. Their team also
+          trained our staff to use the systems effectively."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PS</div>
+          <div>
+            <div class="author-name">Priya Sharma</div>
+            <div class="author-role">Operations Manager, EduFirst Academy, Indiranagar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Their IT manpower consultancy helped us find two excellent network engineers
+          within a week. The candidates were thoroughly vetted and matched exactly what
+          we needed. A dependable partner for IT staffing!"
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AM</div>
+          <div>
+            <div class="author-name">Arun Menon</div>
+            <div class="author-role">HR Manager, GlobalTrade Corp, Whitefield</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="badge badge-orange" style="margin-bottom:20px;">🎯 Free Consultation — No Commitment</div>
+    <h2>Ready to Power Up Your Business?</h2>
+    <p>
+      Get a free, no-obligation consultation from our IT experts. We'll assess your needs
+      and provide a tailored solution that fits your timeline and budget.
+    </p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-accent" style="font-size:1rem;padding:14px 32px;">
+        📋 Get Free Consultation
+      </a>
+      <a href="tel:+91XXXXX7272" class="btn btn-outline" style="font-size:1rem;padding:14px 32px;">
+        📞 Call +91 XXXXX 7272
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="text-center fade-in">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's Start a Conversation</h2>
+      <p class="section-sub">
+        Whether you need a quick quote or a detailed consultation, we're here and ready to help.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info fade-in">
+        <h3>SmartServe IT</h3>
+        <p>
+          A trusted IT partner for businesses across Bangalore. Reach us through any of the
+          channels below — we typically respond within 2 hours during business hours.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <div class="label">Phone</div>
+              <div class="value"><a href="tel:+91XXXXX7272">+91 XXXXX 7272</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:x@gmail.com">x@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🌐</div>
+            <div class="contact-item-text">
+              <div class="label">Website</div>
+              <div class="value"><a href="https://smartserveit.com">smartserveit.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="label">Location</div>
+              <div class="value">Bangalore, Karnataka, India</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div class="contact-item-text">
+              <div class="label">WhatsApp</div>
+              <div class="value"><a href="https://wa.me/91XXXXX7272">+91 XXXXX 7272</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-hours">
+          <h4>⏰ Business Hours</h4>
+          <div class="hours-row"><span>Monday – Friday</span><strong>9:00 AM – 7:00 PM</strong></div>
+          <div class="hours-row"><span>Saturday</span><strong>9:00 AM – 5:00 PM</strong></div>
+          <div class="hours-row"><span>Sunday</span><strong>Emergency Support Only</strong></div>
+          <div class="hours-row" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">
+            <span>🚨 Emergency Helpline</span><strong style="color:var(--blue)">24/7 Available</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form fade-in">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Rahul Kumar" required />
+            </div>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" placeholder="Your Company Ltd." />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">— Select a Service —</option>
+              <option>IT Equipment Sales</option>
+              <option>Installation & Configuration</option>
+              <option>Networking & Internet Services</option>
+              <option>IT Equipment Servicing / AMC</option>
+              <option>Audio-Visual (AV) Systems</option>
+              <option>IT Manpower Consultancy</option>
+              <option>Multiple Services</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message / Requirements</label>
+            <textarea placeholder="Please describe your requirements, location, number of systems, or any specific details..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            📤 Send Message &nbsp;→
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✅ Thank you! We've received your message and will contact you within 2 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAP STRIP ─── -->
+<div class="map-strip">
+  <div class="container">
+    <div class="map-strip-inner">
+      <div class="map-placeholder">
+        <span>🗺️</span>
+        <span>Bangalore, Karnataka, India</span>
+        <span style="font-size:.75rem;margin-top:4px;">Embed Google Map here after hosting</span>
+      </div>
+      <div class="map-info">
+        <h3>Serving All of Bangalore & Beyond</h3>
+        <p>
+          Based in Bangalore, we provide on-site services across the entire city and extended
+          reach to surrounding districts including Mysore, Mangalore, and Tumkur.
+        </p>
+        <div class="map-detail">📍 <span><strong>Primary Base:</strong> Bangalore, Karnataka</span></div>
+        <div class="map-detail">🚗 <span><strong>On-site Coverage:</strong> All Bangalore zones + surroundings</span></div>
+        <div class="map-detail">📡 <span><strong>Remote Support:</strong> Pan-India available</span></div>
+        <div class="map-detail">⏱️ <span><strong>Response SLA:</strong> 4 hours on-site, 30 min remote</span></div>
+        <br/>
+        <a href="https://wa.me/91XXXXX7272" class="btn btn-accent" style="font-size:.88rem;padding:10px 22px;">
+          💬 WhatsApp Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:16px;display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          Smart<span>Serve</span> IT
+        </a>
+        <p>
+          Bangalore's trusted IT partner for hardware sales, networking, AV systems,
+          equipment servicing, and IT manpower consultancy. Delivering smart, reliable
+          technology solutions since inception.
+        </p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" title="LinkedIn">in</a>
+          <a class="social-btn" href="#" title="Facebook">f</a>
+          <a class="social-btn" href="#" title="Instagram">ig</a>
+          <a class="social-btn" href="#" title="Twitter/X">𝕏</a>
+          <a class="social-btn" href="https://wa.me/91XXXXX7272" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">IT Equipment Sales</a></li>
+          <li><a href="#services">Installation & Config</a></li>
+          <li><a href="#services">Networking & Internet</a></li>
+          <li><a href="#services">Equipment Servicing</a></li>
+          <li><a href="#services">AV Systems</a></li>
+          <li><a href="#services">IT Manpower</a></li>
+          <li><a href="#services">AMC Plans</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="#contact">Request AMC</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>Bangalore, Karnataka,<br/>India – 560 001</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span><a href="tel:+91XXXXX7272">+91 XXXXX 7272</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:x@gmail.com">x@gmail.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🌐</span>
+          <span><a href="https://smartserveit.com">smartserveit.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">💬</span>
+          <span><a href="https://wa.me/91XXXXX7272">WhatsApp: +91 XXXXX 7272</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <span>© 2025 SmartServe IT. All rights reserved. | Bangalore, India</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── FLOATING WHATSAPP ─── -->
+<a href="https://wa.me/91XXXXX7272" class="whatsapp-fab" title="Chat on WhatsApp" target="_blank">💬</a>
+
+<!-- ─── HOSTING GUIDE (Hidden – for owner reference) ─── -->
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  HOSTING GUIDE — smartserveit.com on Google Workspace   ║
+╠══════════════════════════════════════════════════════════╣
+
+STEP 1: Download this file
+  → Save this file as: index.html
+
+STEP 2: Choose a static hosting provider
+  Recommended FREE options:
+  A) Netlify (easiest)  → netlify.com
+  B) Vercel             → vercel.com
+  C) GitHub Pages       → pages.github.com
+
+──────────────────────────────────────────────────────────
+OPTION A: Netlify (Recommended — Easiest)
+──────────────────────────────────────────────────────────
+1. Go to netlify.com → Sign up (free)
+2. Click "Add new site" → "Deploy manually"
+3. Drag & drop your index.html file (or a folder with it)
+4. Netlify gives you a temp URL like: random-name.netlify.app
+5. Go to "Domain settings" → "Add custom domain"
+6. Type: smartserveit.com → Click Verify
+7. Netlify will show you two DNS records to add (see Step 3)
+
+──────────────────────────────────────────────────────────
+OPTION B: Vercel
+──────────────────────────────────────────────────────────
+1. Go to vercel.com → Sign up (free)
+2. Click "New Project" → Import or deploy folder
+3. After deploy, go to "Domains" → Add "smartserveit.com"
+4. Vercel shows you DNS records to add (see Step 3)
+
+──────────────────────────────────────────────────────────
+STEP 3: Point Your Google Domain to the Host
+──────────────────────────────────────────────────────────
+1. Go to: domains.google.com
+2. Click on "smartserveit.com" → Manage → DNS
+3. Click "Custom records"
+
+For NETLIFY, add these:
+  Type: A      Name: @      Data: 75.2.60.5
+  Type: CNAME  Name: www    Data: <your-site>.netlify.app
+
+For VERCEL, they give you the exact values to enter.
+
+4. Save and wait 15–60 minutes for propagation.
+
+──────────────────────────────────────────────────────────
+STEP 4: Enable HTTPS (SSL)
+──────────────────────────────────────────────────────────
+• Netlify / Vercel automatically provision a free
+  Let's Encrypt SSL certificate.
+• Your site will be available at https://smartserveit.com
+
+──────────────────────────────────────────────────────────
+STEP 5: Verify
+──────────────────────────────────────────────────────────
+• Open: https://smartserveit.com in browser
+• Check both www and non-www redirect correctly
+• Confirm HTTPS padlock appears
+
+──────────────────────────────────────────────────────────
+CUSTOMIZE BEFORE GOING LIVE:
+──────────────────────────────────────────────────────────
+□ Replace "x@gmail.com" with your real email
+□ Replace "XXXXX7272" with your real phone number
+□ Replace placeholder stats (150+, 500+) with actuals
+□ Add your real Bangalore address in the footer & contact
+□ Add real Google Maps embed (replace map-placeholder)
+□ Add social media profile URLs in footer
+□ Add Google Analytics tracking code (optional)
+□ Add WhatsApp real number in wa.me links
+□ Replace owner name in footer
+
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<!-- ─── SCRIPTS ─── -->
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+
+  function closeMobile() {
+    mobileNav.classList.remove('open');
+  }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Form submit handler
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '⏳ Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '✅ Message Sent!';
+      document.getElementById('formSuccess').style.display = 'block';
+      e.target.reset();
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>
